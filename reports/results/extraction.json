@@ -1,0 +1,13 @@
+{
+  "source": "Open Food Facts CSV export (en.openfoodfacts.org.products.csv.gz)",
+  "rows_read": 4916182,
+  "rows_kept": 278131,
+  "filter": "nutriscore_grade in a-e, countries_tags contains en:france, non-empty ingredients_text",
+  "grade_counts": {
+    "a": 42026,
+    "b": 29118,
+    "c": 62091,
+    "d": 68238,
+    "e": 76658
+  }
+}

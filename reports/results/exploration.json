@@ -1,0 +1,37 @@
+{
+  "products": 265691,
+  "brands_or_groups": 57054,
+  "products_without_brand": 12142,
+  "grade_share": {
+    "a": 0.1426,
+    "b": 0.1028,
+    "c": 0.2258,
+    "d": 0.2489,
+    "e": 0.2799
+  },
+  "products_per_family": {
+    "Sugary snacks": 58669,
+    "Fish Meat Eggs": 32665,
+    "Cereals and potatoes": 30458,
+    "Milk and dairy products": 29835,
+    "Beverages": 23484,
+    "Composite foods": 21366,
+    "unknown": 19634,
+    "Fruits and vegetables": 18667,
+    "Fat and sauces": 16326,
+    "Salty snacks": 14533,
+    "Alcoholic beverages": 54
+  },
+  "ingredients_per_product": {
+    "median": 20.0,
+    "p90": 49.0
+  },
+  "missing_share": {
+    "product_name": 0.0134,
+    "categories_tags": 0.0001,
+    "ingredients_tags": 0.0012,
+    "labels_tags": 0.334,
+    "additives_tags": 0.4535
+  },
+  "nova_group_missing_share": 0.071
+}
