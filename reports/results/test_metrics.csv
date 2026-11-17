@@ -1,0 +1,6 @@
+model,macro_f1,accuracy,within_one_grade,mean_grade_error,quadratic_kappa,macro_f1_low,macro_f1_high,val_macro_f1,reference_only
+Majority class,0.087,0.278,0.5301,1.5785,0.0,0.0816,0.0942,0.0938,False
+Category lookup,0.6116,0.6362,0.8758,0.529,0.7418,0.5934,0.6245,0.6201,False
+Logistic regression (text + tags),0.7052,0.7255,0.939,0.3503,0.8561,0.6834,0.7231,0.7091,False
+LightGBM (text + tags),0.7186,0.7377,0.9446,0.3319,0.8636,0.6974,0.7357,0.7211,False
+Reference: nutrition table,0.9376,0.9489,0.993,0.0596,0.9785,0.9301,0.9428,0.9397,True

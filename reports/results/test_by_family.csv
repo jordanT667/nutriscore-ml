@@ -1,0 +1,11 @@
+pnns_groups_1,n,macro_f1,accuracy,within_one_grade,mean_grade_error,quadratic_kappa
+Sugary snacks,9119,0.6377,0.8372,0.9812,0.1875,0.7414
+Fish Meat Eggs,5503,0.677,0.7296,0.9339,0.3629,0.8581
+Cereals and potatoes,5262,0.6362,0.7022,0.9341,0.3763,0.8078
+Milk and dairy products,4721,0.751,0.8066,0.9729,0.2254,0.8302
+Composite foods,4205,0.5529,0.6625,0.9394,0.4012,0.6411
+Beverages,4096,0.7189,0.6855,0.927,0.4011,0.7826
+Fruits and vegetables,3245,0.6492,0.7901,0.9479,0.27,0.8445
+unknown,3093,0.5668,0.6091,0.8658,0.581,0.7114
+Salty snacks,2472,0.6501,0.6938,0.9511,0.3685,0.7985
+Fat and sauces,2467,0.666,0.6818,0.927,0.4058,0.81

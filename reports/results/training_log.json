@@ -1,0 +1,65 @@
+{
+  "sizes": {
+    "train": 180773,
+    "val": 40730,
+    "test": 44188
+  },
+  "validation": {
+    "logistic_regression_grid": {
+      "C=0.5, class_weight=None": 0.7090661403872448,
+      "C=0.5, class_weight=balanced": 0.7053678470141945,
+      "C=2.0, class_weight=None": 0.7006557687368657,
+      "C=2.0, class_weight=balanced": 0.6976348551798482,
+      "C=8.0, class_weight=None": 0.6850670221521641,
+      "C=8.0, class_weight=balanced": 0.6822786483239069
+    },
+    "lightgbm_best_iteration": 224,
+    "scores": {
+      "Majority class": {
+        "macro_f1": 0.093799688010976,
+        "accuracy": 0.30633439725018413,
+        "within_one_grade": 0.5529585072428186,
+        "mean_grade_error": 1.5002455192732629,
+        "quadratic_kappa": 0.0
+      },
+      "Category lookup": {
+        "macro_f1": 0.6201003896814824,
+        "accuracy": 0.6444880923152467,
+        "within_one_grade": 0.881193223668058,
+        "mean_grade_error": 0.512398723299779,
+        "quadratic_kappa": 0.7508458619388612
+      },
+      "Logistic regression (text + tags)": {
+        "macro_f1": 0.7090661403872448,
+        "accuracy": 0.7289712742450283,
+        "within_one_grade": 0.9371961698993371,
+        "mean_grade_error": 0.3504296587282102,
+        "quadratic_kappa": 0.851490804991093
+      },
+      "LightGBM (text + tags)": {
+        "macro_f1": 0.7210549044736523,
+        "accuracy": 0.7410017186349128,
+        "within_one_grade": 0.9416400687453965,
+        "mean_grade_error": 0.3328259268352566,
+        "quadratic_kappa": 0.8590586493337192
+      },
+      "Reference: nutrition table": {
+        "macro_f1": 0.9397270164567578,
+        "accuracy": 0.950748833783452,
+        "within_one_grade": 0.9942794009329733,
+        "mean_grade_error": 0.05585563466732139,
+        "quadratic_kappa": 0.9807319687214827
+      }
+    }
+  },
+  "n_features": 158242,
+  "selected_on_validation": "LightGBM (text + tags)",
+  "test_gain_over_category_lookup": {
+    "model": "LightGBM (text + tags)",
+    "macro_f1_gain": 0.10667541631851744,
+    "interval_95": [
+      0.09672473026691641,
+      0.11640299791166363
+    ]
+  }
+}
