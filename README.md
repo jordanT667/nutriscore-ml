@@ -1,5 +1,7 @@
 # Estimating the Nutri-Score without a nutrition table
 
+[![tests](https://github.com/jordanT667/nutriscore-ml/actions/workflows/tests.yml/badge.svg)](https://github.com/jordanT667/nutriscore-ml/actions/workflows/tests.yml) ![Python 3.13](https://img.shields.io/badge/python-3.13-3776AB?logo=python&logoColor=white)
+
 Many products in [Open Food Facts](https://world.openfoodfacts.org) have an ingredient list and a category but no nutrition table, so no Nutri-Score can be computed for them. This project asks a simple question: **how well can the grade (A to E) be estimated from what is still available, the ingredients, the product name, the categories, additives and labels?**
 
 Predicting the Nutri-Score *from* the nutrition table would only re-learn a published formula. Here the nutrition table is never given to the model; it is used only as a reference to show what is lost without it.
