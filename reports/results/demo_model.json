@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    "ingredients_text",
+    "product_name",
+    "pnns_groups_2"
+  ],
+  "validation_grid": {
+    "C=0.5": 0.6865122716408745,
+    "C=2.0": 0.6852908980988669
+  },
+  "test": {
+    "macro_f1": 0.677,
+    "accuracy": 0.7013,
+    "within_one_grade": 0.9252,
+    "mean_grade_error": 0.3934,
+    "quadratic_kappa": 0.8313
+  },
+  "note": "Demo model only; the reported project results use all fields (see test_metrics.csv)."
+}
