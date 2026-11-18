@@ -64,6 +64,27 @@ flowchart LR
 | Tuning | Logistic regression: 6 configurations; LightGBM: early stopping (224 rounds) | All on the validation set |
 | Evaluation | Macro-F1 (grades are imbalanced), within-one-grade accuracy, quadratic kappa (grades are ordered), 1,000 bootstrap resamples **of brands** | Intervals match the unit of the split |
 
+## Try it
+
+A small web demo estimates the grade from what a visitor can type: product name, ingredient list and food group. It shows the probability of each grade and the terms that pushed the estimate.
+
+```bash
+streamlit run app.py
+```
+
+```bash
+python -m src.nutriscore.predict "sucre, farine de blé, huile de palme, chocolat" --name "biscuits fourrés" --group "Biscuits and cakes"
+```
+
+The demo cannot ask for Open Food Facts tags, so it uses its own model ([`demo_model.py`](src/nutriscore/demo_model.py)): a logistic regression on those three fields only, tuned on the validation set and evaluated once on the same test set.
+
+| Model | Inputs | Macro-F1 | Within one grade |
+|---|---|---|---|
+| LightGBM (project result) | text and all tags | 0.719 | 0.945 |
+| **Demo model** | name, ingredients, food group | **0.677** | **0.925** |
+
+The demo model file (`demo/model.joblib`, 6.5 MB) is stored in the repository so the demo runs without the 1.5 GB export.
+
 ## Limits
 
 - **Evaluated on products that do have a table.** The grade is only known for those, so the products that really lack a table may differ (for example more small producers), and the scores may be lower on them.
@@ -97,7 +118,11 @@ src/nutriscore/
   explore.py    descriptive statistics and the grades-by-family figure
   features.py   feature pipeline (no nutrition table)
   train.py      baselines, models, validation, single test pass, figures
-tests/          leakage and split tests
+  demo_model.py the smaller model behind the demo
+  predict.py    one prediction with the terms behind it
+app.py          Streamlit demo
+demo/           demo model file
+tests/          leakage, split, prediction and demo tests
 reports/        metrics (JSON, CSV) and figures
 ```
 
