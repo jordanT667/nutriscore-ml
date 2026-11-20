@@ -70,7 +70,7 @@ def split(df: pd.DataFrame, test_size: float = 0.15, val_size: float = 0.15) -> 
     inner = GroupShuffleSplit(
         n_splits=1, test_size=val_size / (1 - test_size), random_state=SEED
     )
-    tr, va = next(inner.split(rest, groups=df["group"].iloc[rest]))
+    _, va = next(inner.split(rest, groups=df["group"].iloc[rest]))
     out = pd.Series("train", index=df.index)
     out.iloc[rest[va]] = "val"
     out.iloc[test] = "test"
