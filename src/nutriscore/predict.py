@@ -67,7 +67,7 @@ def predict(ingredients: str, name: str = "", group: str | None = None, top: int
     order = np.argsort(contrib)
     towards = [(readable(names[x.indices[i]]), float(contrib[i])) for i in order[::-1][:top] if contrib[i] > 0]
     against = [(readable(names[x.indices[i]]), float(contrib[i])) for i in order[:top] if contrib[i] < 0]
-    return Prediction(GRADES[k].upper(), {g.upper(): float(p) for g, p in zip(GRADES, proba)}, towards, against)
+    return Prediction(GRADES[k].upper(), {g.upper(): float(p) for g, p in zip(GRADES, proba, strict=True)}, towards, against)
 
 
 def main() -> None:
