@@ -32,7 +32,7 @@ def main() -> None:
 
     fig, ax = plt.subplots(figsize=(8, 0.42 * len(share) + 1.2))
     left = pd.Series(0.0, index=share.index)
-    for grade, color in zip(GRADES, COLORS):
+    for grade, color in zip(GRADES, COLORS, strict=True):
         ax.barh(share.index, share[grade], left=left, color=color, label=grade.upper())
         left += share[grade]
     ax.invert_yaxis()
