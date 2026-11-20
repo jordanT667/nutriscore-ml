@@ -35,7 +35,7 @@ with st.form("product"):
 if submitted and ingredients.strip():
     p = predict(ingredients, name, None if group == "(not sure)" else group)
     cols = st.columns(5)
-    for col, (grade, prob) in zip(cols, p.probabilities.items()):
+    for col, (grade, prob) in zip(cols, p.probabilities.items(), strict=True):
         chosen = grade == p.grade
         col.markdown(
             f"<div style='text-align:center;padding:10px;border-radius:10px;background:{COLORS[grade]};"
