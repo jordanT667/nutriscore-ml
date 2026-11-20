@@ -90,7 +90,7 @@ class CategoryBaseline:
         self.pnns = frame.groupby("pnns")["y"].agg(lambda s: s.value_counts().idxmax()).to_dict()
         rows = [
             (t, label)
-            for tags, label in zip(df["categories_tags"].values, y)
+            for tags, label in zip(df["categories_tags"].values, y, strict=True)
             for t in self._specific(tags)
         ]
         cat = pd.DataFrame(rows, columns=["tag", "y"])
@@ -101,7 +101,7 @@ class CategoryBaseline:
 
     def predict(self, df):
         out = []
-        for tags, pnns in zip(df["categories_tags"].values, df["pnns_groups_2"].fillna("unknown").values):
+        for tags, pnns in zip(df["categories_tags"].values, df["pnns_groups_2"].fillna("unknown").values, strict=True):
             label = next((self.category[t] for t in self._specific(tags) if t in self.category), None)
             if label is None:
                 label = self.pnns.get(pnns, self.default)
