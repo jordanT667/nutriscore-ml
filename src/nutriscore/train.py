@@ -187,7 +187,7 @@ def main() -> None:
     parts = {s: df.index[df["split"] == s] for s in ("train", "val", "test")}
     X = {s: df.loc[i, model_columns()] for s, i in parts.items()}
     y = {s: y_all[i] for s, i in parts.items()}
-    log = {"sizes": {s: int(len(i)) for s, i in parts.items()}, "validation": {}}
+    log = {"sizes": {s: len(i) for s, i in parts.items()}, "validation": {}}
 
     models, val_scores = {}, {}
 
