@@ -4,6 +4,6 @@ scipy==1.18.1
 scikit-learn==1.7.2
 lightgbm==4.7.0
 matplotlib==3.11.2
-pyarrow==25.0.1
+pyarrow==26.0.1
 pytest==9.1.1
 streamlit==1.62.0
